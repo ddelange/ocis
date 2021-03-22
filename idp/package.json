@@ -87,7 +87,7 @@
     "@babel/runtime": "7.13.10",
     "eslint": "^7.21.0",
     "eslint-plugin-i18n-text": "^1.0.0",
-    "eslint-plugin-jest": "^24.2.1",
+    "eslint-plugin-jest": "^24.3.2",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-intl-format": "^1.1.6",
     "prop-types": "^15.6.2",
