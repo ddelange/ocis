@@ -2736,6 +2736,11 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
+didyoumean@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/didyoumean/-/didyoumean-1.2.2.tgz#989346ffe9e839b4555ecf5666edea0d3e8ad037"
+  integrity sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==
+
 diff@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
@@ -5233,14 +5238,15 @@ nightwatch-api@^3.0.2:
     "@types/debug" "^4.1.5"
     debug "^4.3.1"
 
-nightwatch@^1.6.0:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/nightwatch/-/nightwatch-1.6.3.tgz#94936dd1a267d9a16969141ac03ac61c5a26f636"
-  integrity sha512-otVr+YUmtXcj7aG14GfkuCMUOpuJfSOVvsTxQiSRmO3rSfclOWglE6jaCmyMiHMYNwy/LPp86PXJFD5pzMo/wA==
+nightwatch@^1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/nightwatch/-/nightwatch-1.7.7.tgz#0061a98258b131f9b38730ab1ffb80d47ab816cf"
+  integrity sha512-yKMiIQCRCqGcMbULENSbQt1fX3SRoKlswt7EuMphTUkODkFGFtasba9eGoWnLyiHl5ZAA9JFhO1DVn+IanbGYA==
   dependencies:
     assertion-error "^1.1.0"
     chai-nightwatch "^0.4.0"
     ci-info "^2.0.0"
+    didyoumean "^1.2.1"
     dotenv "7.0.0"
     ejs "^3.1.6"
     envinfo "^7.5.1"
