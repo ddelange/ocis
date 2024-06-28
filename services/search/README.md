@@ -74,7 +74,7 @@ When extracting content, you can specify whether [stop words](https://en.wikiped
 
 When using the Tika container and docker-compose, consider the following:
 
-*   See the [ocis_wopi](https://github.com/owncloud/ocis/tree/master/deployments/examples/ocis_wopi) example.
+*   See the [ocis_full](https://github.com/owncloud/ocis/tree/master/deployments/examples/ocis_full) example.
 *   Containers for the linked service are reachable at a hostname identical to the alias or the service name if no alias was specified.
 
 If using the `tika` extractor, make sure to also set `FRONTEND_FULL_TEXT_SEARCH_ENABLED` in the frontend service to `true`. This will tell the webclient that full-text search has been enabled.
@@ -144,10 +144,16 @@ This is exactly the same as [File uploaded - synchronous](#file-uploaded---synch
 The service includes a command-line interface to trigger re-indexing a space:
 
 ```shell
-ocis search index --space $SPACE_ID --user $USER_ID
+ocis search index --space $SPACE_ID
 ```
 
-Note that not names but IDs are necessary and that the specified user ID needs access to the space to be indexed.
+It can also be used to re-index all spaces:
+
+```shell
+ocis search index --all-spaces
+```
+
+Note that either `--space $SPACE_ID` or `--all-spaces` must be set.
 
 ## Notes
 

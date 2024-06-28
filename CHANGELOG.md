@@ -48,12 +48,20 @@ The following sections list the changes for unreleased.
 ## Summary
 
 * Bugfix - Fix sharing-ng permission listings for personal and virtual drive items: [#9438](https://github.com/owncloud/ocis/pull/9438)
+* Bugfix - Add inotify-tools and bash packages to docker files: [#9440](https://github.com/owncloud/ocis/pull/9440)
 * Bugfix - Allow all uploads to restart: [#9465](https://github.com/owncloud/ocis/pull/9465)
+* Bugfix - Fix the email notification service: [#9467](https://github.com/owncloud/ocis/pull/9467)
+* Bugfix - Fix Password Reset: [#9479](https://github.com/owncloud/ocis/pull/9479)
+* Enhancement - Rudimentary OCM support in graph: [#8909](https://github.com/owncloud/ocis/pull/8909)
 * Enhancement - Activitylog API: [#9361](https://github.com/owncloud/ocis/pull/9361)
 * Enhancement - Add the backchannel logout event: [#9447](https://github.com/owncloud/ocis/pull/9447)
 * Enhancement - Add fail flag to consistency check: [#9447](https://github.com/owncloud/ocis/pull/9447)
 * Enhancement - Deprecate gateway environment variables: [#9451](https://github.com/owncloud/ocis/pull/9451)
 * Enhancement - Allow reindexing all spaces: [#9456](https://github.com/owncloud/ocis/pull/9456)
+* Enhancement - Allow disable versioning: [#9473](https://github.com/owncloud/ocis/pull/9473)
+* Enhancement - Bump reva: [#9473](https://github.com/owncloud/ocis/pull/9473)
+* Enhancement - Empty trash directories: [#9483](https://github.com/owncloud/ocis/pull/9483)
+* Enhancement - Various fixes for the activitylog service: [#9485](https://github.com/owncloud/ocis/pull/9485)
 
 ## Details
 
@@ -65,11 +73,39 @@ The following sections list the changes for unreleased.
    https://github.com/owncloud/ocis/issues/8922
    https://github.com/owncloud/ocis/pull/9438
 
+* Bugfix - Add inotify-tools and bash packages to docker files: [#9440](https://github.com/owncloud/ocis/pull/9440)
+
+   We need both packages to make posixfs work. Later, once the golang package is
+   fixed to not depend on bash any more, bash can be removed again.
+
+   https://github.com/owncloud/ocis/pull/9440
+
 * Bugfix - Allow all uploads to restart: [#9465](https://github.com/owncloud/ocis/pull/9465)
 
    On postprocessing-restart, allow all uploads to restart even if one fails.
 
    https://github.com/owncloud/ocis/pull/9465
+
+* Bugfix - Fix the email notification service: [#9467](https://github.com/owncloud/ocis/pull/9467)
+
+   We fixed an error in the notification service that caused the email notification
+   to fail when the user's display name contained special characters.
+
+   https://github.com/owncloud/ocis/issues/9402
+   https://github.com/owncloud/ocis/pull/9467
+
+* Bugfix - Fix Password Reset: [#9479](https://github.com/owncloud/ocis/pull/9479)
+
+   The `ocis idm resetpassword` always used the hardcoded `admin` name for the
+   user. Now user name can be specified via the `--user-name` (`-u`) flag.
+
+   https://github.com/owncloud/ocis/pull/9479
+
+* Enhancement - Rudimentary OCM support in graph: [#8909](https://github.com/owncloud/ocis/pull/8909)
+
+   We now allow creating and accepting OCM shares.
+
+   https://github.com/owncloud/ocis/pull/8909
 
 * Enhancement - Activitylog API: [#9361](https://github.com/owncloud/ocis/pull/9361)
 
@@ -107,6 +143,34 @@ The following sections list the changes for unreleased.
    reindexing all spaces at once.
 
    https://github.com/owncloud/ocis/pull/9456
+
+* Enhancement - Allow disable versioning: [#9473](https://github.com/owncloud/ocis/pull/9473)
+
+   Adds new configuration options to disable versioning for the storage providers
+
+   https://github.com/owncloud/ocis/pull/9473
+
+* Enhancement - Bump reva: [#9473](https://github.com/owncloud/ocis/pull/9473)
+
+   Bumps reva version
+
+   https://github.com/owncloud/ocis/pull/9473
+
+* Enhancement - Empty trash directories: [#9483](https://github.com/owncloud/ocis/pull/9483)
+
+   We have added a cli-command that allows cleaning up empty directories in the
+   trashbins folder structure in decomposedFS.
+
+   https://github.com/owncloud/ocis/issues/9393
+   https://github.com/owncloud/ocis/issues/9271
+   https://github.com/owncloud/ocis/pull/9483
+
+* Enhancement - Various fixes for the activitylog service: [#9485](https://github.com/owncloud/ocis/pull/9485)
+
+   First round of fixes to make the activitylog service more robust and reliable.
+
+   https://github.com/owncloud/ocis/pull/9485
+   https://github.com/owncloud/ocis/pull/9467
 
 # Changelog for [6.0.0] (2024-06-19)
 

@@ -108,6 +108,7 @@ config = {
                 "EMAIL_PORT": "9000",
             },
             "extraServerEnvironment": {
+                "OCIS_ADD_RUN_SERVICES": "notifications",
                 "NOTIFICATIONS_SMTP_HOST": "email",
                 "NOTIFICATIONS_SMTP_PORT": "2500",
                 "NOTIFICATIONS_SMTP_INSECURE": "true",
@@ -2064,6 +2065,7 @@ def ocisServer(storage, accounts_hash_difficulty = 4, volumes = [], depends_on =
 
     if deploy_type == "federation":
         environment["OCIS_URL"] = OCIS_FED_URL
+        environment["PROXY_HTTP_ADDR"] = OCIS_FED_DOMAIN
         container_name = "federation-ocis-server"
 
     if tika_enabled:
@@ -2194,19 +2196,15 @@ def skipIfUnchanged(ctx, type):
 
 def example_deploys(ctx):
     on_merge_deploy = [
-        "ocis_ldap/latest.yml",
-        "ocis_keycloak/latest.yml",
-        "ocis_traefik/latest.yml",
-        "ocis_wopi/latest.yml",
-        "ocis_s3/latest.yml",
+        "ocis_full/master.yml",
     ]
     nightly_deploy = [
-        "ocis_ldap/released.yml",
-        "ocis_keycloak/released.yml",
-        "ocis_traefik/released.yml",
-        "ocis_wopi/released.yml",
-        "ocis_traefik/daily.yml",
-        "ocis_wopi/daily.yml",
+        "ocis_ldap/rolling.yml",
+        "ocis_keycloak/rolling.yml",
+        "ocis_full/production.yml",
+        "ocis_full/rolling.yml",
+        "ocis_full/onlyoffice-rolling.yml",
+        "ocis_full/s3-rolling.yml",
     ]
 
     # if on master branch:
@@ -2478,7 +2476,8 @@ def pipelineSanityChecks(ctx, pipelines):
 OCIS_URL = "https://ocis-server:9200"
 OCIS_DOMAIN = "ocis-server:9200"
 OC10_URL = "http://oc10:8080"
-OCIS_FED_URL = "https://federation-ocis-server:9200"
+OCIS_FED_URL = "https://federation-ocis-server:10200"
+OCIS_FED_DOMAIN = "federation-ocis-server:10200"
 
 # step volumes
 stepVolumeOC10Templates = \
