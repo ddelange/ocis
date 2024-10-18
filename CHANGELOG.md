@@ -60,6 +60,7 @@ The following sections list the changes for unreleased.
 * Bugfix - Fix delete share panic: [#10219](https://github.com/owncloud/ocis/pull/10219)
 * Bugfix - Continue listing shares on error: [#10243](https://github.com/owncloud/ocis/pull/10243)
 * Bugfix - Avoid re-creating thumbnails: [#10251](https://github.com/owncloud/ocis/pull/10251)
+* Bugfix - Kept historical resource naming in activity: [#10266](https://github.com/owncloud/ocis/pull/10266)
 * Bugfix - Fix panic when sharing with groups: [#10279](https://github.com/owncloud/ocis/pull/10279)
 * Bugfix - Thumbnail request limit: [#10280](https://github.com/owncloud/ocis/pull/10280)
 * Bugfix - Forbid the ocm space sharing: [#10287](https://github.com/owncloud/ocis/pull/10287)
@@ -69,7 +70,8 @@ The following sections list the changes for unreleased.
 * Enhancement - WebOffice Templates: [#10276](https://github.com/owncloud/ocis/pull/10276)
 * Enhancement - Remove Deprecations: [#10305](https://github.com/owncloud/ocis/pull/10305)
 * Enhancement - Allow to use libvips for generating thumbnails: [#10310](https://github.com/owncloud/ocis/pull/10310)
-* Enhancement - Bump reva to 2.xx.x: [#10321](https://github.com/owncloud/ocis/pull/10321)
+* Enhancement - Bump reva to 2.xx.x: [#10347](https://github.com/owncloud/ocis/pull/10347)
+* Enhancement - Bump various dependencies: [#10352](https://github.com/owncloud/ocis/pull/10352)
 
 ## Details
 
@@ -117,6 +119,14 @@ The following sections list the changes for unreleased.
    if a thumbnail already existed in the cache.
 
    https://github.com/owncloud/ocis/pull/10251
+
+* Bugfix - Kept historical resource naming in activity: [#10266](https://github.com/owncloud/ocis/pull/10266)
+
+   Kept historical resource naming after renaming in activity for shares and public
+   links.
+
+   https://github.com/owncloud/ocis/issues/10210
+   https://github.com/owncloud/ocis/pull/10266
 
 * Bugfix - Fix panic when sharing with groups: [#10279](https://github.com/owncloud/ocis/pull/10279)
 
@@ -232,14 +242,19 @@ The following sections list the changes for unreleased.
 
    https://github.com/owncloud/ocis/pull/10310
 
-* Enhancement - Bump reva to 2.xx.x: [#10321](https://github.com/owncloud/ocis/pull/10321)
+* Enhancement - Bump reva to 2.xx.x: [#10347](https://github.com/owncloud/ocis/pull/10347)
 
    TODO
 
+   https://github.com/owncloud/ocis/pull/10347
    https://github.com/owncloud/ocis/pull/10321
    https://github.com/owncloud/ocis/pull/10236
    https://github.com/owncloud/ocis/pull/10216
    https://github.com/owncloud/ocis/pull/10315
+
+* Enhancement - Bump various dependencies: [#10352](https://github.com/owncloud/ocis/pull/10352)
+
+   https://github.com/owncloud/ocis/pull/10352
 
 # Changelog for [6.5.0] (2024-10-01)
 
